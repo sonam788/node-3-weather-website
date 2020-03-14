@@ -9,7 +9,9 @@ const forecast = (latitude, longitude, callback)=>{
 
         }else{
             const dataObject = JSON.parse(body);
-             callback(undefined,dataObject.daily.data[0].summary +'It is currently' + dataObject.currently.temperature+'Degrees out. There is '
+            console.log(dataObject.daily.data[0])
+             callback(undefined,dataObject.daily.data[0].summary +'It is currently' + dataObject.currently.temperature+
+             'Degrees out this is high today.'+dataObject.daily.data[0].temperatureHigh +'with a low of:'+ dataObject.daily.data[0].temperatureLow +'.There is '
              +dataObject.currently.precipProbability+'% of chance of rain')
 
         }
